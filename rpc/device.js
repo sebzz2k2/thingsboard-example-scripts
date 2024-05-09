@@ -1,6 +1,7 @@
 var mqtt = require("mqtt");
+require("dotenv").config();
 var client = mqtt.connect("tcp://dev.trakr.live", {
-  username: "919YPoEKfgACZdMSsO26",
+  username: process.env.DEVICE_TOKEN,
 });
 
 client.on("connect", function () {
