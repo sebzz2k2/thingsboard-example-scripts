@@ -1,7 +1,7 @@
 var mqtt = require("mqtt");
 require("dotenv").config();
 var client = mqtt.connect("tcp://dev.trakr.live", {
-  username: process.env.DEVICE_TOKEN,
+  username: "0uWs1gv1A4TnxxG4SsC0",
 });
 client.on("connect", function () {
   console.log("connected");
@@ -15,3 +15,10 @@ client.on("message", function (topic, message) {
   //client acts as an echo service
   client.publish("v1/devices/me/rpc/response/" + requestId, message);
 });
+
+/*
+> node rpc/server.js
+connected
+request.topic: v1/devices/me/rpc/request/0
+request.body: {"method":"setGpio","params":{"pin":"23","value":1}}
+*/
