@@ -23,3 +23,8 @@ const fs = require("fs");
 	fs.writeFileSync("telemetry.json", JSON.stringify(telemetry, null, 2))
 })()
 
+/*
+ * update .env
+ * run npm install
+ * run node telemetry/get-telemetry.js
+*/
